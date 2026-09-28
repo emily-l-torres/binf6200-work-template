@@ -1,4 +1,4 @@
-# Report how many whole codons fit in a DNA sequence of a given length.
+"""Report how many whole codons fit in a DNA sequence of a given length."""
 length_text = input("Sequence length in bases: ")
 length = int(length_text)
 codons = length // 3
