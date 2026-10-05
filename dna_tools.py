@@ -15,6 +15,24 @@ def gc_fraction(sequence):
     return gc_count / len(sequence)
 
 
+def count_stop_codons(sequence: str) -> int:
+    """
+    Count the stop codons (TAA, TAG, TGA) in the first reading frame.
+
+    @param sequence: a DNA sequence, such as "ATGTAA"
+    @type sequence: str
+    @return: the number of in-frame stop codons
+    @rtype: int
+    """
+    sequence = sequence.upper()
+    count = 0
+    for position in range(0, len(sequence) - 2, 3):
+        codon = sequence[position : position + 3]
+        if codon in ("TAA", "TAG", "TGA"):
+            count += 1
+    return count
+
+
 def main():
     """Print the GC fraction of one sequence."""
     print(f"GC fraction of ATGGCCTGGTAA: {gc_fraction('ATGGCCTGGTAA'):.2f}")
