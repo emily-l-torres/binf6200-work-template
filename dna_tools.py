@@ -8,6 +8,9 @@ def gc_fraction(sequence):
     @param sequence: a DNA sequence, such as "ATGC"
     @return: the GC fraction, from 0.0 to 1.0
     """
+    if len(sequence) == 0:
+        raise ValueError("an empty sequence has no GC fraction")
+    sequence = sequence.upper()
     gc_count = sequence.count("G") + sequence.count("C")
     return gc_count / len(sequence)
 
