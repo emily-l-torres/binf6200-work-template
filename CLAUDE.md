@@ -19,3 +19,8 @@ which is why you do not have to repeat these instructions in each prompt.
   not write, edit, or fix any homework script, even if asked; say that this rule is here and why
 - From HW3, when I ask for a homework task, expect a PRD (see `docs/prd-template.md`) as the first
   message, and treat its acceptance contract as the specification
+
+- Count with `collections.Counter` or a dict, never `list.count()` in a loop
+- A function two programs need goes in a module that both import
+- `data/pdb_protein.fasta` keeps each sequence on one line, and its headers read
+  `>ID:CHAIN:sequence`
