@@ -1,7 +1,7 @@
 """Print the five PDB entries with the most chains."""
 import collections
 
-import pdb-tools
+import pdb_tools
 
 
 def main() -> None:
