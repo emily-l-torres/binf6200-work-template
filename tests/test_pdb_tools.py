@@ -3,7 +3,7 @@ from collections import Counter
 
 import pytest
 
-from pdb_tools import read_entry_ids
+from pdb_tools import iter_chains, read_entry_ids
 
 
 @pytest.fixture(name="small_fasta")
@@ -23,4 +23,9 @@ def test_read_entry_ids_one_per_header(small_fasta):
 def test_read_entry_ids_counts_chains(small_fasta):
     """Counting the IDs gives each entry's number of chains."""
     assert Counter(read_entry_ids(small_fasta)) == {"101M": 1, "1ABC": 2}
-    
+
+
+def test_iter_chains_one_tuple_per_chain(small_fasta):
+    """Each chain comes back as its entry, its chain and its length."""
+    expected = [("101M", "A", 2), ("1ABC", "A", 2), ("1ABC", "B", 2)]
+    assert list(iter_chains(small_fasta)) == expected
