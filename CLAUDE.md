@@ -24,3 +24,5 @@ which is why you do not have to repeat these instructions in each prompt.
 - A function two programs need goes in a module that both import
 - `data/pdb_protein.fasta` keeps each sequence on one line, and its headers read
   `>ID:CHAIN:sequence`
+- Stream `data/pdb_protein.fasta` with a generator, never into a list
+- After a pandas merge, check the row count, and look for NaN
